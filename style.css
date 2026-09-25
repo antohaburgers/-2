@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+html,body,button,canvas { -webkit-user-select:none; -webkit-touch-callout:none; -webkit-tap-highlight-color:transparent; touch-action:none; overscroll-behavior:none; }
+button { font:inherit; cursor:pointer; }
+[hidden] { display:none !important; }
+#game-controls { position:fixed; inset:0; pointer-events:none; }
+#game-controls .control,#game-controls #pedals { pointer-events:auto; }
+#toolbar { position:fixed; right:max(12px,env(safe-area-inset-right)); top:max(10px,env(safe-area-inset-top)); display:flex; gap:6px; }
+#toolbar button,#close-map,#update-button { border:1px solid #ffffff38; color:#e3e9e5; border-radius:8px; padding:8px 12px; background:#17231fdb; font-size:12px; }
+#minimap { position:fixed; top:55px; right:max(14px,env(safe-area-inset-right)); width:110px; height:98px; border:1px solid #c8d6c34d; border-radius:5px; pointer-events:none; opacity:.88; }
+#map-panel { position:fixed; inset:0; z-index:20; background:#0b151eea; display:grid; place-items:center; padding:18px; }
+.panel { width:min(570px,94vw); color:#e2eadd; }
+.panel-title { display:flex; justify-content:space-between; align-items:center; font-weight:800; letter-spacing:.15em; }
+.panel p { color:#a9bbb1; font-size:13px; }
+#section-buttons { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+#section-buttons button { padding:18px 10px; background:#29453c; color:#f0f3e6; border:1px solid #97b4a45c; border-radius:10px; font-size:13px; }
+#pwa-status { position:fixed; left:50%; bottom:max(8px,env(safe-area-inset-bottom)); transform:translateX(-50%); max-width:35vw; text-align:center; font-size:10px; color:#b9c9c0; pointer-events:none; }
+#update-button { position:fixed; left:50%; top:45px; transform:translateX(-50%); z-index:30; background:#a54e2c; }
+@media (max-height:430px) { #minimap { width:85px; height:76px; } #hint { display:none; } }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #0d1014; font-family: system-ui, sans-serif; touch-action: none; user-select: none; }
+#app, #game { position: fixed; inset: 0; width: 100%; height: 100%; }
+#game { display: block; }
+#hint { position: fixed; top: max(12px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); color: #c9d1d9; opacity: .55; font-size: 11px; letter-spacing: .2em; pointer-events: none; }
+#debug { position: fixed; top: 16px; left: 16px; color: #dce6ee; font: 12px/1.45 ui-monospace, monospace; white-space: pre; pointer-events: none; text-shadow: 0 1px 2px #000; }
+.control { position: fixed; left: max(22px, env(safe-area-inset-left)); bottom: max(22px, env(safe-area-inset-bottom)); width: min(30vw, 190px); height: min(30vw, 190px); border-radius: 50%; background: rgba(14,20,26,.38); border: 1px solid rgba(255,255,255,.16); box-shadow: inset 0 0 28px rgba(0,0,0,.25); }
+.control span { position: absolute; width: 42%; height: 42%; left: 29%; top: 29%; border-radius: 50%; background: rgba(220,230,238,.45); border: 1px solid rgba(255,255,255,.5); box-shadow: 0 4px 16px rgba(0,0,0,.35); }
+#pedals { position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); width: min(37vw, 280px); height: min(30vw, 190px); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+.button { border: 1px solid rgba(255,255,255,.2); border-radius: 15px; color: #e9f1f6; background: rgba(23,30,37,.66); font-weight: 700; font-size: clamp(11px, 2vw, 15px); letter-spacing: .04em; touch-action: none; -webkit-tap-highlight-color: transparent; }
+.button:active, .button.active { background: rgba(213,71,48,.78); transform: scale(.97); }
+.throttle { grid-row: 1 / 3; grid-column: 2; background: rgba(36,89,65,.68); font-size: clamp(13px, 2.5vw, 19px); }
+.throttle:active, .throttle.active { background: rgba(63,153,93,.85); }
+.handbrake { background: rgba(104,62,40,.7); }
+@media (orientation: portrait) { #app::after { content: 'Поверните телефон горизонтально'; position: fixed; inset: 0; display: grid; place-items: center; background: #0d1014; color: #dce6ee; font-size: 18px; z-index: 10; } }
